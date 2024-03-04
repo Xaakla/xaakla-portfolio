@@ -13,6 +13,7 @@ import {SharedModule} from "@shared/shared.module";
   standalone: true
 })
 export class ProjectsComponent implements OnInit {
+  public title = 'My Work';
   slides = [];
 
   constructor(

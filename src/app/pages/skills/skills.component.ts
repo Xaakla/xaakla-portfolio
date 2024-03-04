@@ -12,6 +12,7 @@ import {SharedModule} from "@shared/shared.module";
   standalone: true
 })
 export class SkillsComponent implements OnInit {
+  public title = 'Skills';
 
   constructor(private _titleService: Title) {}
 

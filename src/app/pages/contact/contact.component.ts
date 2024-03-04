@@ -15,25 +15,26 @@ import {SharedModule} from "@shared/shared.module";
 })
 export class ContactComponent implements OnInit {
 
-  public contactForm!: FormGroup;
+  public title = 'Contact Me';
+  public form!: FormGroup;
 
   constructor(
     private _titleService: Title,
     // private apiService: ApiService,
-    private formBuilder: FormBuilder
+    private _fb: FormBuilder
   ) {}
 
   ngOnInit() {
     this._titleService.setTitle('Contact Me');
-    this.initForm();
+    this._createForm();
   }
 
-  initForm() {
-    this.contactForm = this.formBuilder.group({
-      name: [null, [Validators.required]],
+  private _createForm() {
+    this.form = this._fb.group({
+      name: ['', [Validators.required]],
       subject: ['Proposta de Emprego - Portfolio Diego Rocha', Validators.required],
-      replyTo: [null, [Validators.required]],
-      text: [null, [Validators.required]],
+      replyTo: ['', [Validators.required]],
+      text: ['', [Validators.required]],
     });
   }
 
@@ -46,7 +47,15 @@ export class ContactComponent implements OnInit {
   }
 
   public markAsTouched(fieldName: string) {
-    this.contactForm.get(fieldName)?.markAsTouched();
+    this.form.get(fieldName)?.markAsTouched();
+  }
+
+  public isTouched(fieldName: string): boolean {
+    return this.form.controls[fieldName].touched;
+  }
+
+  onSubmit(): void {
+
   }
 
 }

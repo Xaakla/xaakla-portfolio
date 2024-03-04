@@ -1,34 +1,30 @@
 <div class="container-page">
   <div class="regular">
-    <h1 class="page-title neon">
-      Contact Me
-    </h1>
+    <h1 class="page-title neon">{{title}}</h1>
 
     <div class="regular-main">
       <section class="left">
-        <form [formGroup]="contactForm">
+        <form [formGroup]="form" (submit)="onSubmit()">
           <div class="input-block" (click)="markAsTouched('name')">
-            <label for="username" [style]="contactForm.controls['name'].touched ? 'transform: translateY(-45px)' : ''">
+            <label for="username" [style]="isTouched('name') ? 'transform: translateY(-45px)' : ''">
               NAME</label>
             <input type="text" id="username" placeholder="Enter your name" required formControlName="name"
-                   [class]="contactForm.controls['name'].touched ? 'touched' : ''">
+                   [class]="isTouched('name') ? 'touched' : ''">
           </div>
 
           <div class="input-block" (click)="markAsTouched('replyTo')">
             <label for="email"
-                   [style]="contactForm.controls['replyTo'].touched ? 'transform: translateY(-45px)' : ''">
+                   [style]="isTouched('replyTo') ? 'transform: translateY(-45px)' : ''">
               EMAIL</label>
             <input type="email" email id="email" placeholder="Enter your email" required formControlName="replyTo"
-                  [class]="contactForm.controls['replyTo'].touched ? 'touched' : ''">
+                  [class]="isTouched('replyTo') ? 'touched' : ''">
           </div>
 
           <div class="input-block">
-            <textarea #msgValue placeholder="Enter your message" rows="4" formControlName="text"></textarea>
+            <textarea placeholder="Enter your message" rows="4" formControlName="text"></textarea>
           </div>
 
-          <app-button (click)="sendMessage()">
-            SEND MESSAGE
-          </app-button>
+          <app-button [type]="'submit'">SEND MESSAGE</app-button>
         </form>
       </section>
       <section class="right">
