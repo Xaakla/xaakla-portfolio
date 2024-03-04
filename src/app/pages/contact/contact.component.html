@@ -1,0 +1,39 @@
+<div class="container-page">
+  <div class="regular">
+    <h1 class="page-title neon">
+      Contact Me
+    </h1>
+
+    <div class="regular-main">
+      <section class="left">
+        <form [formGroup]="contactForm">
+          <div class="input-block" (click)="markAsTouched('name')">
+            <label for="username" [style]="contactForm.controls['name'].touched ? 'transform: translateY(-45px)' : ''">
+              NAME</label>
+            <input type="text" id="username" placeholder="Enter your name" required formControlName="name"
+                   [class]="contactForm.controls['name'].touched ? 'touched' : ''">
+          </div>
+
+          <div class="input-block" (click)="markAsTouched('replyTo')">
+            <label for="email"
+                   [style]="contactForm.controls['replyTo'].touched ? 'transform: translateY(-45px)' : ''">
+              EMAIL</label>
+            <input type="email" email id="email" placeholder="Enter your email" required formControlName="replyTo"
+                  [class]="contactForm.controls['replyTo'].touched ? 'touched' : ''">
+          </div>
+
+          <div class="input-block">
+            <textarea #msgValue placeholder="Enter your message" rows="4" formControlName="text"></textarea>
+          </div>
+
+          <app-button (click)="sendMessage()">
+            SEND MESSAGE
+          </app-button>
+        </form>
+      </section>
+      <section class="right">
+        <img src="../../../assets/svg/contact.svg" alt="contact me" class="mate-img">
+      </section>
+    </div>
+  </div>
+</div>

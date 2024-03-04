@@ -1,0 +1,25 @@
+import {Injectable} from '@angular/core';
+import {environment} from '@env/environment';
+import {HttpClient} from '@angular/common/http';
+import {take} from 'rxjs/operators';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+
+  private readonly API: string = environment.API;
+
+  constructor(private http: HttpClient) { }
+
+  list(): any {
+    return this.http.get<any>(this.API + 'projects')
+      .pipe(take(1));
+  }
+
+  sendMail(data: any): any {
+    return this.http.post<any>(this.API + 'sendmail', data)
+      .pipe(take(1));
+  }
+
+}

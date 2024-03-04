@@ -1,0 +1,27 @@
+/* Style to Mobile */
+@media (max-width: 840px) {
+  .container-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 32px 64px;
+    overflow-y: auto !important;
+  }
+
+  .regular {
+    .regular-main {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .right {
+    .mate-img {
+      width: 325px;
+    }
+  }
+
+  .page-title {
+    margin-bottom: 32px;
+  }
+}

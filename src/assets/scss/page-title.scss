@@ -1,0 +1,23 @@
+@import "../../variables";
+
+.page-title {
+  font-size: 48px;
+  letter-spacing: 2px;
+  color: $white-color;
+  animation: page-title 0.8s forwards ease-out;
+}
+
+@keyframes page-title {
+  from {
+    position: absolute;
+    top: -64px;
+    left: 32px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    left: 32px;
+    opacity: 1;
+    position: relative;
+  }
+}

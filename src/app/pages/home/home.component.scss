@@ -1,0 +1,130 @@
+@import "../../../variables.scss";
+
+.left {
+  .title {
+    font-size: 48px;
+    line-height: 64px;
+    color: $white-color;
+    list-style: none;
+    user-select: none;
+    padding: 0;
+
+    .title-row {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+
+      li {
+        transition: text-shadow 350ms;
+      }
+
+      li.neon,
+      li:hover {
+        filter: blur(0.6px);
+        text-transform: initial;
+        text-shadow: 0 0 1px $primary-color, 0 0 2px $primary-color,
+        0 0 4px $primary-color, 0 0 8px $primary-color,
+        0 0 16px $primary-color;
+        position: relative;
+      }
+
+      section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $primary-color;
+        z-index: 1;
+        mix-blend-mode: color;
+        opacity: 0.5;
+        filter: blur(40px);
+      }
+    }
+
+    .title-row:nth-child(1) {
+      animation: home-fade-in 0.8s ease-out forwards 0.7s;
+      opacity: 0;
+    }
+    .title-row:nth-child(2) {
+      animation: home-fade-in 0.8s ease-out forwards 0.5s;
+      opacity: 0;
+    }
+    .title-row:nth-child(3) {
+      animation: home-fade-in 0.8s ease-out forwards 0.3s;
+      opacity: 0;
+    }
+  }
+
+  .subtitle {
+    color: $third-color;
+    font-size: 12px;
+    user-select: none;
+    margin-bottom: 32px;
+    animation: home-fade-in 0.8s ease-out forwards;
+  }
+
+  .btn-animate {
+    animation: btn-fade-in 0.8s ease-out forwards 1s;
+    opacity: 0;
+  }
+}
+
+.right {
+  #a-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    path:nth-child(1) {
+      stroke-dasharray: 789.571044921875px;
+      stroke-dashoffset: 789.571044921875px;
+      animation: line-animation-red 4s forwards;
+    }
+    path:nth-child(2) {
+      stroke-dasharray: 712.4664916992188px;
+      stroke-dashoffset: 712.4664916992188px;
+      animation: line-animation-white 2950ms forwards 1s;
+    }
+  }
+}
+
+@media (max-height: 750px) {
+  .right { display: none !important; }
+}
+
+@keyframes line-animation-red {
+  0% {
+    stroke-dashoffset: 789.571044921875px;
+  }
+  89% {
+    stroke-dashoffset: 0;
+    fill: none;
+  }
+  90% {
+    fill: #a6120d1a;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #a6120d;
+  }
+}
+@keyframes line-animation-white {
+  0% {
+    stroke-dashoffset: 712.4664916992188px;
+    fill: none;
+  }
+  89% {
+    stroke-dashoffset: 0;
+    fill: none;
+  }
+  90% {
+    fill: #b3b3b31a;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #b3b3b3;
+  }
+}

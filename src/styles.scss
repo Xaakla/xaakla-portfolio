@@ -1,1 +1,113 @@
+@import "./variables.scss";
+@import "assets/scss/button";
+@import "assets/scss/desktop";
+@import "assets/scss/mobile";
+@import "assets/scss/page-title";
+
 /* You can add global styles to this file, and also import other style files */
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arkhip", "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(-45deg, #1e2125, #1f242d, #171b20, #13161f);
+  background-size: 200% 200%;
+  animation: change-bg-color 20s ease-in-out infinite;
+  color: $white-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .mate-img {
+    animation: mate-img 0.8s forwards ease-out 0.3s;
+    opacity: 0;
+    user-select: none;
+  }
+}
+
+.neon {
+  filter: blur(0.6px);
+  text-transform: initial;
+  text-shadow: 0 0 1px $primary-color, 0 0 2px $primary-color,
+  0 0 4px $primary-color, 0 0 8px $primary-color, 0 0 16px $primary-color;
+  position: relative;
+}
+
+.regular {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  .regular-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@keyframes mate-img {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes change-bg-color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes home-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes btn-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
