@@ -12,6 +12,10 @@ button {
   user-select: none;
   border: none;
 
+  &.small {
+    transform: scale(.7);
+  }
+
   &:disabled {
     color: red;
     cursor: no-drop;

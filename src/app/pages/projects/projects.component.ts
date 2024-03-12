@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ApiService } from '../../services/api/api.service';
 import {SharedModule} from "@shared/shared.module";
+import {LoadingComponent} from "@shared/loading/loading.component";
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
   imports: [
-    SharedModule
+    SharedModule,
+    LoadingComponent
   ],
   standalone: true
 })

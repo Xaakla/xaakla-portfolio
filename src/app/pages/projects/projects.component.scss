@@ -1,1 +1,52 @@
 @import "../../../variables";
+
+.card-project {
+  background: $secondary-color;
+  border: 1px solid $primary-color;
+  border-radius: 4px;
+  padding: 6px;
+
+  .card-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-project-image {
+    img {
+      border-radius: 4px;
+      height: 400px;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .card-project-footer {
+    margin-top: 12px;
+    padding: 8px 16px;
+
+    .card-project-title {
+      margin-bottom: 12px;
+    }
+
+    .card-project-details {
+      color: $third-color;
+    }
+  }
+}
+
+@media (max-width: 510px) {
+  .card-row {
+    flex-direction: column !important;
+  }
+
+  .card-project-title {
+    text-align: center;
+  }
+
+  .card-project-details {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+}

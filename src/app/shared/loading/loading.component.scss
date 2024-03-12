@@ -1,0 +1,49 @@
+@import "../../../variables";
+
+.loading {
+  display: flex;
+  flex-direction: row;
+
+  section {
+    position: relative;
+    margin: 16px;
+    background: green;
+
+    div {
+      position: absolute;
+      bottom: 0;
+      width: 20px;
+      height: 20px;
+      background: $primary-color;
+      border-radius: 50%;
+    }
+
+    &:nth-child(1) {
+      div {
+        animation: loading-animation 800ms infinite ease-out;
+      }
+    }
+    &:nth-child(2) {
+      div {
+        animation: loading-animation 800ms infinite ease-out 0.1s;
+      }
+    }
+    &:nth-child(3) {
+      div {
+        animation: loading-animation 800ms infinite ease-out 0.2s;
+      }
+    }
+  }
+}
+
+@keyframes loading-animation {
+  from {
+    bottom: 0;
+  }
+  50% {
+    bottom: 50px;
+  }
+  to {
+    bottom: 0;
+  }
+}

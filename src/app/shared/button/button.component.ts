@@ -9,6 +9,7 @@ export class ButtonComponent {
   @Input() ref!: string;
   @Input() type!: string;
   @Input() disabled = false;
+  @Input('small') isSmall = false;
 
   constructor() {}
 }

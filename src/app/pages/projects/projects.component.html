@@ -3,6 +3,21 @@
     <h1 class="page-title neon">{{title}}</h1>
 
     <div class="regular-main">
+      <div class="card-project">
+        <div class="card-project-image">
+          <img src="../../../assets/img/bento.png" alt="project-image" />
+        </div>
+        <div class="card-project-footer">
+          <h3 class="card-project-title">Fullstack Developer</h3>
+          <section class="card-row">
+            <small class="card-project-details">06/jul/2021 até 01/mar/2024</small>
+            <app-button style="transform: scale(.7)" [small]="false">Detalhes</app-button>
+          </section>
+        </div>
+      </div>
+      <ng-template #loading>
+        <app-loading></app-loading>
+      </ng-template>
     </div>
   </div>
 </div>
