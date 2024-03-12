@@ -18,7 +18,7 @@ export class ApiService {
   }
 
   sendMail(data: any): any {
-    return this.http.post<any>(this.API + 'sendmail', data)
+    return this.http.post<any>(`${this.API}/email`, data)
       .pipe(take(1));
   }
 

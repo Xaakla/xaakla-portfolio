@@ -12,6 +12,11 @@ button {
   user-select: none;
   border: none;
 
+  &:disabled {
+    color: red;
+    cursor: no-drop;
+  }
+
   span {
     display: block;
     position: absolute;
@@ -54,6 +59,9 @@ button {
     transition: transform 500ms;
   }
 }
+button:not(button:disabled) {
+
+}
 
 button:hover {
   color: #ffffff;
@@ -79,4 +87,5 @@ button:hover {
     transition: transform 500ms;
   }
 }
+
 

@@ -1,6 +1,6 @@
 <div class="container-page">
   <div class="regular">
-    <h1 class="page-title neon">{{title}}</h1>
+    <h1 class="page-title neon">{{ title }}</h1>
 
     <div class="regular-main">
       <section class="left">
@@ -9,7 +9,7 @@
             <label for="username" [style]="isTouched('name') ? 'transform: translateY(-45px)' : ''">
               NAME</label>
             <input type="text" id="username" placeholder="Enter your name" required formControlName="name"
-                   [class]="isTouched('name') ? 'touched' : ''">
+                   [ngClass]="isValid('name', true, true)" [class]="isTouched('name') ? 'touched' : ''">
           </div>
 
           <div class="input-block" (click)="markAsTouched('replyTo')">
@@ -17,14 +17,23 @@
                    [style]="isTouched('replyTo') ? 'transform: translateY(-45px)' : ''">
               EMAIL</label>
             <input type="email" email id="email" placeholder="Enter your email" required formControlName="replyTo"
-                  [class]="isTouched('replyTo') ? 'touched' : ''">
+                   [ngClass]="isValid('replyTo', true, true)" [class]="isTouched('replyTo') ? 'touched' : ''">
           </div>
 
           <div class="input-block">
-            <textarea placeholder="Enter your message" rows="4" formControlName="text"></textarea>
+            <textarea placeholder="Enter your message" rows="4"
+                      [ngClass]="isValid('text', true, true)" formControlName="text"></textarea>
           </div>
 
-          <app-button [type]="'submit'">SEND MESSAGE</app-button>
+          <div class="row flex-direction-row justify-content-between align-items-center flex-1">
+            <app-button [type]="'submit'" style="width: fit-content">SEND MESSAGE</app-button>
+<!--            <div class="" style="background: red">-->
+              <i class='bx bxl-whatsapp align-middle bx-md' style="width: fit-content"></i>
+<!--            </div>-->
+          </div>
+
+          <span>Talk by Whatsapp</span>
+
         </form>
       </section>
       <section class="right">

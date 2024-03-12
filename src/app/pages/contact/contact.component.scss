@@ -104,3 +104,14 @@ form {
     display: none;
   }
 }
+
+.is-invalid {
+  border-color: red !important;
+}
+.is-valid {
+  border-color: green !important;
+  outline: none !important;
+}
+.ng-pristine {
+  border-color: $primary-color !important;
+}
