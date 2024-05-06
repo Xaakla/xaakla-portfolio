@@ -3,19 +3,28 @@
     <h1 class="page-title neon">{{title}}</h1>
 
     <div class="regular-main">
-      <div class="card-project">
-        <div class="card-project-image">
-          <img src="../../../assets/img/bento.png" alt="project-image" />
+      <ng-container *ngIf="!loading; else loadingApp">
+        <div class="card-project" *ngFor="let project of projects">
+          <div class="card-project-image">
+            <img [src]="project['imageUrl']" alt="project-image" />
+          </div>
+          <div class="card-project-footer">
+            <h3 class="card-project-title">{{ project['projectName'] }}</h3>
+            <section class="card-row">
+              <small class="card-project-details">{{project['startDate'] | date:'MMM, y'}}
+                until
+                {{!!project['endDate'] ? (project['endDate'] | date:'MMM, y') : 'Atualmente'}}
+              </small>
+              <app-button [small]="true" (click)="handleShowDescription(project['projectId'])">Detalhes</app-button>
+            </section>
+          </div>
+
+          <div class="card-project-description" [id]="'project-description-'+project['projectId']" (click)="handleShowDescription(project['projectId'])">
+            <p>{{project['description']}}</p>
+          </div>
         </div>
-        <div class="card-project-footer">
-          <h3 class="card-project-title">Fullstack Developer</h3>
-          <section class="card-row">
-            <small class="card-project-details">06/jul/2021 até 01/mar/2024</small>
-            <app-button style="transform: scale(.7)" [small]="false">Detalhes</app-button>
-          </section>
-        </div>
-      </div>
-      <ng-template #loading>
+      </ng-container>
+      <ng-template #loadingApp>
         <app-loading></app-loading>
       </ng-template>
     </div>

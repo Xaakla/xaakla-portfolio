@@ -25,15 +25,14 @@
                       [ngClass]="isValid('text', true, true)" formControlName="text"></textarea>
           </div>
 
-          <div class="row flex-direction-row justify-content-between align-items-center flex-1">
-            <app-button [type]="'submit'" style="width: fit-content">SEND MESSAGE</app-button>
-<!--            <div class="" style="background: red">-->
-              <i class='bx bxl-whatsapp align-middle bx-md' style="width: fit-content"></i>
-<!--            </div>-->
-          </div>
+          <app-button [type]="'submit'" style="width: fit-content">SEND MESSAGE</app-button>
 
-          <span>Talk by Whatsapp</span>
-
+          <a [href]="fullLink" class="whatsapp-text">
+            <div class="wt-content">
+              <i class='bx bxl-whatsapp align-middle bx-sm' style="width: fit-content"></i>
+              Talk by Whatsapp
+            </div>
+          </a>
         </form>
       </section>
       <section class="right">

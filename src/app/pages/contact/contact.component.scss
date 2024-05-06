@@ -88,6 +88,22 @@ form {
   animation: home-fade-in 0.8s ease-out forwards;
 }
 
+.whatsapp-text {
+  margin-top: 32px;
+  color: lawngreen;
+  cursor: pointer;
+
+  .wt-content {
+    transition: all 400ms ease-in-out;
+  }
+
+  &:hover {
+    .wt-content {
+      transform: translateX(30px);
+    }
+  }
+}
+
 
 @media (max-width: 720px) {
   form {

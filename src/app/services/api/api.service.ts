@@ -12,8 +12,8 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  list(): any {
-    return this.http.get<any>(this.API + 'projects')
+  findAllProjects(): any {
+    return this.http.get<any>(`${this.API}/project/list`)
       .pipe(take(1));
   }
 

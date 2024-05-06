@@ -27,6 +27,8 @@ export class ContactComponent implements OnInit {
   public title = 'Contact Me';
   public form!: FormGroup;
 
+  private _message: string = 'Hey Diego! I\'m coming from your portfolio.';
+
   constructor(
     private _titleService: Title,
     private _apiService: ApiService,
@@ -46,6 +48,10 @@ export class ContactComponent implements OnInit {
       replyTo: ['', [Validators.required]],
       text: ['', [Validators.required]],
     });
+  }
+
+  public get fullLink(): string {
+    return `https://wa.me/5562996764631?text=${this._message}`;
   }
 
   public markAsTouched(fieldName: string) {
