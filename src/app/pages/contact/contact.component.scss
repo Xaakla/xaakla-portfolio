@@ -89,6 +89,8 @@ form {
 }
 
 .whatsapp-text {
+  animation: btn-fade-in 0.8s ease-out forwards 0.8s;
+  opacity: 0;
   margin-top: 32px;
   color: lawngreen;
   cursor: pointer;
